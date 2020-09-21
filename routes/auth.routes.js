@@ -10,10 +10,10 @@ const { Mongoose } = require('mongoose');
 // SIGNUP
 
 // Route to display the signup form to user
-routes.get('/signup', (req, res) => res.render('auth/signup'));
+router.get('/signup', (req, res) => res.render('auth/signup'));
 
 // Route to process form data
-roouter.post('/signup', (req, res, next) => {
+router.post('/signup', (req, res, next) => {
   const { username, email, password } = req.body;
 
   //empty form will show this messae
@@ -90,7 +90,7 @@ router.post('/login', (req, res, next) => {
       }
       bcryptjs
         .compare(password, user.passwordHash)
-        .then((sucess) => {
+        .then((success) => {
           if (success) {
             req.session.currentUser = user;
             return res.redirect('/userProfile');

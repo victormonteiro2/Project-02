@@ -1,8 +1,13 @@
 {{!-- views/auth/login.hbs --}}
+{{>navbar}}
 
-<div id="form">
-    <h2>Login</h2>
-    <form action="/login" method="POST">
+<div class="div-signin d-flex justify-content-center align-content-center flex-wrap" id="form">
+    <section>
+        <img class="img-form-signin" src="/images/495623-PI3AWD-314.jpg" alt="">
+    </section>
+    <section class="section-form-signin-rectangle d-flex align-content-center justify-content-center flex-wrap">
+
+    <form class="d-flex flex-column text-center" action="/login" method="POST">
         <label for="input-email">Email</label>
         <input type="email" id="input-email" name="email" placeholder="Your email" />
 
@@ -15,4 +20,5 @@
             <p class="error">{{errorMessage}}</p>
         {{/if}}
     </form>
+    </section>
 </div>

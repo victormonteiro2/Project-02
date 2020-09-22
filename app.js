@@ -7,6 +7,9 @@ const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
+const books = require('google-books-search');
+
+//teste com API
 
 // require database configuration
 require('./configs/db.config');

@@ -1,15 +1,21 @@
 {{!--views/auth/signup.hbs --}}
 
-<div id="form">
-  <h2>Signup</h2>
-  <form action="/signup" method="POST">
-    <label for="input-username">Username</label>
-    <input type="text" id="input-username" name="username" placeholder="Your username" />
+{{>navbar}}
+
+<div class="div-signup d-flex justify-content-center align-content-center flex-wrap" id="form">
+  <section>
+    <img class="img-form-signup" src="images/495623-PI3AWD-314.jpg" alt="">
+  </section>
+  <section class=" d-flex align-content-center justify-content-center flex-wrap section-form-siginup-rectangle">
+    <form class="d-flex flex-column text-center" action="/signup" method="POST">
+   
+    <label for="input-username">Nome</label>
+    <input type="text" id="input-username" name="username" placeholder="Digite seu nome aqui!" />
 
     <label for="input-email">Email</label>
-    <input type="email" id="input-email" name="email" placeholder="Your email" />
+    <input type="email" id="input-email" name="email" placeholder="Digite seu email aqui!" />
 
-    <label for="input-password">Password</label>
+    <label for="input-password">Senha</label>
     <input type="password" name="password" id="input-password" placeholder="********" />
 
     <button type="submit">Create account</button>
@@ -19,4 +25,6 @@
     <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
+  </section>
+  
 </div>

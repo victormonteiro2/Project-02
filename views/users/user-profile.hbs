@@ -1,26 +1,32 @@
-{{!--views/users/user-profile.hbs --}}
+<div class="div-profile container-fluid">
+        <div class=" div-profile-row row">
+            <div class="d-flex flex-column align-content-center flex-wrap div-profile-left col">
+               <section class=" align-self-center rounded-photo-frame">
 
-{{!-- {{#if user}}
-    <h2>Welcome, {{ user.username }}!</h2>
-    <p>This is your profile page my friend!</p>
-    <button>
-        <a href="/userProfile">Reload the page</a>
-    </button>
-{{else}}
-    <p>Still no logged in user, sorry!</p>
-{{/if}} --}}
+                   <img class="profile-photo" src="images/pexels-adrienne-andersen-2552127.jpg" alt="">
+                </section>
+               
+                <section>
+                    <h4>{{userInSession.username}} | {{Cidade}}</h4>
+                </section>
+                <section class=" section-score-btn align-self-center ">
+                    <p class="p-score">Sua pontuação: {{userInSession.email}} pontos</p>
+                </section>
+                <span ><hr class="profile-hr"></span>
+                <section class="section-seus-livros align-self-center text-center">
+                    <h4>Seus livros:</h4>
+                 
+                        <p><a href="">Livros solicitados</a></p>
+                        <p> <a href="">Livros procurados</a></p>
+                        <p> <a href="">Livros disponibilizados</a> </p>
+                   
+                </section>
+                <span ><hr class="profile-hr"></span>
+                <button>Editar perfil</button>
+            </div>
+            <div class="col-4 col-9">
+                hfghf
+            </div>
 
-{{!-- //////////////////////////////////////////// --}}
-{{!-- the new version, with the session: --}}
-{{#if userInSession}}
-<h2>Welcome, {{ userInSession.username }}!</h2>
-<p>This is your profile page my friend!</p>
-
-<p>Email: {{userInSession.email}}</p>
-<p>Creation date: {{userInSession.createdAt}}</p>
-<button>
-    <a href="/userProfile">Reload the page</a>
-</button>
-{{else}}
-<p>Still no logged in user, sorry!</p>
-{{/if}}
+        </div>
+    </div>

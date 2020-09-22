@@ -1,8 +1,144 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif; }
+  
+  /* a {
+    color: #00B7FF; } */
+  
+  
+    /*  layout.hbs style */
+  
+    li a {
+    color: black;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  
+  .logo {
+    font-weight: 500;
+    font-size: 25px;
+  }
+  
+  .span-logo {
+    color: #F15228;
+  }
+  
+  nav {
+    height: 80px;
+  }
+  .navbar {  
+    
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+  
+  #btn-style a {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  #btn-style {
+    
+    border: 1px solid #F15228;
+    border-radius: 3px;
+    background-color: #F15228;
+    
+  }
+  
+  /* index.hbs style */
+  
+  .div-first-displayed-content {
+    height: 91vh;
+  }
+  
+  .div-first-displayed-content h1 {
+    font-size: 56px;
+  }
+  
+  .div-first-displayed-content p {
+    font-size: 17px;
+  }
+  
+  .img-illustration-home {
+    width: 700px;
+  }
+  
+  .div-second-displayed-content {
+    height: 100vh;
+    background-color: tomato;
+  }
+  
+  /* profile.hbs style */
+  .profile-rectangle{
+    height: 90vh;
+  
+  }
+
+  /* layout profile-user.hbs */
+  .div-profile {
+   
+    height: 100vh;
+    background-color: white;
 }
 
-a {
-  color: #00B7FF;
+.div-profile-row{
+    
+    height: 100vh;
 }
+
+.div-profile-left{
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.div-profile-right{
+   
+}
+
+.rounded-photo-frame {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.rounded-photo-frame img {
+    width: 100%;
+    height: auto;
+}
+
+.section-score-btn {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: white;
+
+}
+
+.p-score {
+    margin: 0;
+    padding: 5px 8px 5px 8px;
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
+}
+
+.profile-hr {
+   border-color: #2B395E;
+}
+
+.section-seus-livros p{
+border: 1px solid white;
+background-color: white;
+border-radius: 50px;
+padding: 5px 8px 5px 8px;
+
+}
+.section-seus-livros a {
+    color: black;
+}
+
+
+
+  
+  /*# sourceMappingURL=style.css.map */

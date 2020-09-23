@@ -2,31 +2,31 @@
 
 <div class="div-profile container-fluid">
         <div class=" div-profile-row row">
-            <div class="d-flex flex-column align-content-center flex-wrap div-profile-left col">
+            <div class="d-flex flex-column align-content-center justify-content-center flex-wrap div-profile-left col">
                <section class=" align-self-center rounded-photo-frame">
 
                    <img class="profile-photo" src="images/pexels-adrienne-andersen-2552127.jpg" alt="">
                 </section>
                
-                <section>
-                    <h4>{{userInSession.username}} | {{Cidade}}</h4>
+                <section class="name-section-profile">
+                    <h4>{{userInSession.username}}</h4>
                 </section>
                 <section class=" section-score-btn align-self-center ">
-                    <p class="p-score">Sua pontuação: {{userInSession.email}} pontos</p>
+                    <p class="p-score">Sua pontuação:  pontos</p>
                 </section>
                 <span ><hr class="profile-hr"></span>
                 <section class="section-seus-livros align-self-center text-center">
                     <h4>Seus livros:</h4>
                  
-                        <p><a href="">Livros solicitados</a></p>
+                        <p ><a  href="">Livros solicitados</a></p>
                         <p> <a href="">Livros procurados</a></p>
                         <p> <a href="">Livros disponibilizados</a> </p>
                    
                 </section>
                 <span ><hr class="profile-hr"></span>
-                <button>Editar perfil</button>
+                <button class="btn-edit-profile">Editar perfil</button>
             </div>
-            <div class="col-8">
+            <div class="col-9">
                  
             </div>
         </div>

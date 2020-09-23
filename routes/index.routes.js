@@ -9,7 +9,8 @@ router.get('/', (req, res, next) => res.render('index'));
 router.get('/search', (req, res, next) => {
   books.search(req.query.search, (error, result) => {
     if (!error) {
-      console.log(result);
+      res.render('../views/users/user-profile', { result });
+      console.log(result[0]);
     } else {
       console.log(error);
     }

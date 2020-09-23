@@ -31,6 +31,10 @@
   <input type="text" name="search"> <button type="submit"> enviar</button>
   </form>
             </div>
-{{title}}
+            {{#each result}}
+            <div>
+                <p>{{title}}</p>
+            </div>
+            {{/each}}
         </div>
     </div>

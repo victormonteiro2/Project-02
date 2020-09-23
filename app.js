@@ -17,6 +17,7 @@ require('./configs/db.config');
 //Routers
 const indexRouter = require('./routes/index.routes');
 const authRouter = require('./routes/auth.routes');
+const { db } = require('./models/User.model');
 const app = express();
 
 //use session here:

@@ -9,6 +9,9 @@ const bookSchema = new Schema(
     title: String,
     subtitle: String,
     authors: [String],
+    description: String,
+    categories: [String],
+    id: String,
     thumbnail: String
   },
   {

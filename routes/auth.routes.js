@@ -6,6 +6,10 @@ const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
 const User = require('../models/User.model.js');
 const { Mongoose } = require('mongoose');
+const express = require('express');
+const app = express();
+
+require('../configs/session.config')(app);
 
 // SIGNUP
 

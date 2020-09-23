@@ -141,18 +141,31 @@ legend{
 /* layout profile-user.hbs */
 .div-profile {
  
-  height: 100vh;
+  height: 80vh;
   background-color: white;
 }
-
+.name-section-profile {
+  width: 400px;
+}
 .div-profile-row{
   
-  height: 100vh;
+  height: 92vh;
 }
-
+.div-profile-left h4 {
+  padding-top: 20px;
+  text-align: center;
+  font-weight: 500;
+}
 .div-profile-left{
   background: rgb(238,174,202);
   background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.btn-edit-profile {
+  align-self: center;
+  border-radius: 50px;
+  color: #2B395E;
+  background-color: white;
+  width: 200px;
 }
 
 /* .div-profile-right{
@@ -204,6 +217,10 @@ padding: 5px 8px 5px 8px;
 
 /* style signup.hbs */
 
+.sign-h1 {
+  padding-right: 10px;
+  padding-left: 10px
+}
 .div-signup {
 height: 91vh;
 }
@@ -282,6 +299,41 @@ align-self: center;
   width: 150px;
   align-self: center;
   }
+
+/* style library.hbs */
+
+.form-library {
+  height: 5vh;
+}
+.library-imgs {
+  width: 150px;
+  align-self: center;
+  padding-bottom: 10px;
+}
+
+.card-library  {
+  border: 1px solid #2B395E;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.card-library form button {
+  width: 100px;
+  border-radius: 50px;
+  justify-self: center;
+  background-color: white;
+  color: #2B395E;
+  border: 1.5px solid #2B395E;
+}
+/* 
+.div-library {
+  width: 100vw;
+} */
 
 /*# sourceMappingURL=style.css.map */
 

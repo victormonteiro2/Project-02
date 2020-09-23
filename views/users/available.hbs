@@ -1,1 +1,19 @@
-hello
+<div>
+    <h2>Seus Livros Disponibilizados:</h2>
+      <div class="d-flex flex-wrap col-10">
+{{#each book}}
+<div class=" col-4">
+  <div class="card card-library" ;>
+    <img class="library-imgs card-img-top" src="{{thumbnail}}" alt="Book image">
+    <p><span class="bold">Title:</span> {{title}}</p>
+    <p><span class="bold">Authors:</span> {{authors}}</p>
+    <p><span class="bold">Description:</span> {{description}}</p>
+     <form action="/add-book/{{id}}" method="POST">
+     <button type="submit">Add</button>
+     </form>   
+        <hr>
+  </div>
+</div>
+{{/each}}
+  </div>
+</div>

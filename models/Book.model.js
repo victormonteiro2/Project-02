@@ -12,7 +12,8 @@ const bookSchema = new Schema(
     description: String,
     categories: [String],
     id: String,
-    thumbnail: String
+    thumbnail: String,
+    offering: [{ type: Schema.Types.ObjectId, ref: 'User' }]
   },
   {
     timestamps: true

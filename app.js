@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
 const books = require('google-books-search');
+const app = express();
 
 //teste com API
 
@@ -17,8 +18,6 @@ require('./configs/db.config');
 //Routers
 const indexRouter = require('./routes/index.routes');
 const authRouter = require('./routes/auth.routes');
-const { db } = require('./models/User.model');
-const app = express();
 
 //use session here:
 require('./configs/session.config')(app);
@@ -32,8 +31,8 @@ hbs.registerPartials(path.join(__dirname, 'views/partials'));
 
 // Middleware Setup
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());

@@ -11,7 +11,16 @@ router.get('/', (req, res, next) => res.render('index'));
 
 router.get('/library', (req, res) => res.render('library'));
 
-router.get('/available', (req, res, next) => res.render('users/available'));
+router.get('/available', (req, res, next) => {
+  BookModel.find()
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  res.render('users/available');
+});
 
 // router.post('/available', (req, res, next) => {
 //   db.collection.insert();
@@ -30,7 +39,7 @@ router.get('/search', (req, res, next) => {
 });
 
 router.post('/add-book/:id', (req, res, next) => {
-  console.log(req.user);
+  console.log('TESTE', req.session);
   books.lookup(req.params.id, (err, result) => {
     if (!err) {
       BookModel.create({
@@ -40,7 +49,8 @@ router.post('/add-book/:id', (req, res, next) => {
         description: result.description,
         categories: result.categories,
         id: result.id,
-        thumbnail: result.thumbnail
+        thumbnail: result.thumbnail,
+        offering: req.session.currentUser._id
       })
         .then((response) => res.redirect('/available'))
         .catch((error) => console.log(error));

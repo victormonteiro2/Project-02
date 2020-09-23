@@ -31,8 +31,8 @@ hbs.registerPartials(path.join(__dirname, 'views/partials'));
 
 // Middleware Setup
 app.use(logger('dev'));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());

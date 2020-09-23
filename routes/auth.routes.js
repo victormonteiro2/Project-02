@@ -8,6 +8,7 @@ const User = require('../models/User.model.js');
 const { Mongoose } = require('mongoose');
 const express = require('express');
 const app = express();
+const BookModel = require('../models/Book.model');
 
 require('../configs/session.config')(app);
 
@@ -100,7 +101,9 @@ router.post('/login', (req, res, next) => {
             return res.redirect('/userProfile');
           }
           //LTERAR PATH DO LOGIN
-          res.render('auth/login', { errorMessage: 'incorrect password.' });
+          return res.render('auth/login', {
+            errorMessage: 'incorrect password.'
+          });
         })
         .catch((err) => {
           throw new Error(err);
@@ -119,12 +122,19 @@ router.post('/logout', (req, res) => {
 router.get('/userProfile', (req, res) => {
   console.log('your session expires: ', req.session.cookie.expires);
   if (req.session.currentUser) {
-    return res.render('users/user-profile', {
-      userInSession: req.session.currentUser
-    });
+    BookModel.find({ offering: req.session.currentUser._id })
+      .then((response) => {
+        return res.render('users/user-profile', {
+          userInSession: req.session.currentUser,
+          userBooks: response
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } else {
+    return res.redirect('/login');
   }
-
-  res.redirect('/login');
 });
 
 module.exports = router;

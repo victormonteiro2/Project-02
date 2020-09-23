@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express');
 // const { route } = require('../app');
 const router = express.Router();
@@ -15,11 +16,12 @@ router.get('/available', (req, res, next) => {
   BookModel.find()
     .then((response) => {
       console.log(response);
+      res.render('users/available', {book: response});
     })
     .catch((error) => {
       console.log(error);
     });
-  res.render('users/available');
+
 });
 
 // router.post('/available', (req, res, next) => {

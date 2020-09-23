@@ -303,6 +303,7 @@ align-self: center;
 /* style library.hbs */
 
 .form-library {
+  padding-top: 40px;
   height: 5vh;
 }
 .library-imgs {
@@ -318,6 +319,7 @@ align-self: center;
 
 }
 
+
 .bold {
   font-weight: bold;
 }
@@ -330,10 +332,37 @@ align-self: center;
   color: #2B395E;
   border: 1.5px solid #2B395E;
 }
-/* 
+
+.form-search-library input{
+  /* border-radius: 5px; */
+  border: 1px solid #2B395E;
+  width: 350px;
+  margin-right: -14px;
+}
+
+.form-search-library button{
+  /* border-radius: 5px; */
+  color: #2B395E;
+  border: 1px solid;
+  border-color: #2B395E;
+  background-color: white;
+  height: 28px;
+
+}
+
+.div-title-library h2 {
+  font-size: 50px;
+  font-weight: bolder;
+  color: #2B395E;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
 .div-library {
+  padding-top: 60px;
   width: 100vw;
-} */
+} 
 
 /*# sourceMappingURL=style.css.map */
 

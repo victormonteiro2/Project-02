@@ -1,0 +1,17 @@
+{{>navbar}}
+<form action="/search" method="GET">
+  <input type="text" name="search"> <button type="submit"> enviar</button>
+</form>
+            
+{{#each result}}
+<div>
+    <img src="{{thumbnail}}" alt="Book image">
+    <p>Title: {{title}}</p>
+    <p>Authors: {{authors}}</p>
+    <p>Description: {{description}}</p>
+     <form action="/add-book/{{id}}" method="POST">
+     <button type="submit">Add</button>
+     </form>   
+        <hr>
+</div>
+{{/each}}

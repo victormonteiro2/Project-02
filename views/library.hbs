@@ -2,7 +2,6 @@
 
 
 {{!-- <div class="div-title-library d-flex justify-content-center">
-
   <h2>Busque livros aqui!</h2>
 </div> --}}
 <div class="library-mother-div">
@@ -28,25 +27,10 @@
     <p><span class="bold">Title:</span> {{title}}</p>
     <p><span class="bold">Authors:</span> {{authors}}</p>
     <p class="overflow-ellipsis"><span class=" bold">Description:</span> {{description}}</p>
-     {{!-- <form action="/add-book/{{id}}" method="POST">
+     <form action="/add-book/{{id}}" method="POST">
      <button type="submit">Add</button>
-     </form>    --}}
-        
-{{!--teste --}}
-     <form action="/add-wishlist/{{id}}" method="POST">
-     
-     {{!-- <div class="div-forms-avaibles d-flex justify-content-center flex-row"> --}}
-
-     <button type="submit">Add WL</button>
      </form>   
-      
-      <form action="/remove-wishlist" method="GET">
-     <button type="submit">Remove WL</button>
-     </form> 
-
-
-{{!-- teste --}}
-
+        
   </div>
 </div>
 {{/each}}

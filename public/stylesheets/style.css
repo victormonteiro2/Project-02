@@ -75,6 +75,16 @@ nav {
 
 /* index.hbs style second displayer content  */
 
+.faq-second-row {
+margin-top: 50px;
+}
+
+.section-text-faq-para-enviar{
+  margin-right: 250px;
+}
+.section-text-faq-pontuacao{
+  margin-right: 250px;
+}
 .div-second-displayed-content {
   height: 100vh;
   background-color: #F7EEE9;
@@ -118,7 +128,7 @@ legend{
   width: 320px;
 }
 .section-text-faq h2 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
 }
 
@@ -131,6 +141,12 @@ legend{
   margin-top: 100px;
 }
 
+
+/* index.hbs footer style */
+footer {
+  height: 300px;
+  background-color: #2B395E;
+}
 
 /* profile.hbs style */
 .profile-rectangle{
@@ -216,6 +232,10 @@ padding: 5px 8px 5px 8px;
 
 
 /* style signup.hbs */
+
+.span-azul {
+  color: #3C4DED;
+}
 
 .sign-h1 {
   padding-right: 10px;
@@ -303,7 +323,7 @@ align-self: center;
 /* style library.hbs */
 
 .form-library {
-  padding-top: 40px;
+  padding-top: 50px;
   height: 5vh;
 }
 .library-imgs {
@@ -364,6 +384,55 @@ align-self: center;
   width: 100vw;
 } 
 
+/* .div-cards-library {
+  height: 400px;
+} */
+
+/* style avaiable/userProfile.hbs */
+.card-profile-imgs {
+  width: 120px;
+  height: 140px;
+  padding-right: 20px;
+  
+  
+}
+
+.card-profile  {
+  border: 1.5px solid #2B395E;
+  width: 490px;
+  
+  margin-bottom: 20px;
+  /* padding-right: 20px; */
+
+}
+
+.div-card-profile {
+  padding-right: 200px;
+  padding-left: 200px;
+}
+
+.text-title-card-profile {
+  font-size: 20px;
+  font-weight: 600;
+  
+  margin-top: 200px;
+}
+
+.p-card-profile {
+
+padding-top: 10px;
+}
+
+i {
+font-weight: 300;
+}
+
+.h2-profile{
+  text-align: center;
+  color: #2B395E;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 /*# sourceMappingURL=style.css.map */
 
 

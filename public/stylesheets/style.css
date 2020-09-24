@@ -96,7 +96,7 @@ margin-top: 50px;
 }
 
 .div-left h1 {
-  margin-top: 200px;
+  
   font-size: 50px;
   font-weight: 900;
   /* border-left: 2px solid #3C4DED; */
@@ -105,6 +105,7 @@ margin-top: 50px;
 }
 
 fieldset {
+  margin-top: 200px;
   border-bottom: 25px solid #3C4DED;
   border-left: 2px solid #3C4DED
 }
@@ -148,13 +149,15 @@ footer {
   background-color: #2B395E;
 }
 
-footer a {
+.a-footer-email{
+ color: white;
+  padding-left: 10px;
   vertical-align: middle;
 }
-
+/* 
 footer div {
-  /* height: 70px; */
-}
+  height: 70px;
+} */
 .logo-ironhack{
   width: 60px;
   /* height: 60px; */
@@ -162,12 +165,15 @@ footer div {
 
 .email-icon {
   justify-self: end;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   width: 30px;
+}
+.div-email {
+  align-self: center;
 }
 
 .a-footer{
-  padding-top: 14px;
+  padding-top: 20px;
   color: white;
   padding-left: 15px;
 }
@@ -195,12 +201,19 @@ footer div {
   text-align: center;
   font-weight: 500;
 }
+
+.edit-profile-btn-form {
+  align-self: center;
+}
+
 .div-profile-left{
+  
   background: rgb(238,174,202);
   background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 .btn-edit-profile {
-  align-self: center;
+  /* justify-self: center;
+  align-self: center; */
   border-radius: 50px;
   color: #2B395E;
   background-color: white;
@@ -239,7 +252,19 @@ footer div {
 }
 
 .profile-hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
  border-color: #2B395E;
+}
+
+.h4-username {
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+}
+
+.section-seus-livros h4 {
+  padding-top: 0;
 }
 
 .section-seus-livros p{
@@ -509,6 +534,19 @@ font-weight: 300;
 .div-forms-avaibles button {
   margin-left: 25px;
   margin-bottom: 20px;
+}
+
+/* edit-user.hbs style */
+
+.btn-edit-user {
+  color: #2B395E;
+  background-color: white;
+  border-radius: 50px;
+  padding-left: 10px;
+}
+
+.div-mother-edit-user {
+color: #2B395E;
 }
 /*# sourceMappingURL=style.css.map */
 

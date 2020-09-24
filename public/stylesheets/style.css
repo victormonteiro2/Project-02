@@ -148,6 +148,10 @@ footer {
   background-color: #2B395E;
 }
 
+footer a {
+  vertical-align: middle;
+}
+
 footer div {
   /* height: 70px; */
 }
@@ -362,6 +366,15 @@ align-self: center;
   height: 100%;
   background-color: #F29A8F;
 } */
+
+#overflow-ellipsis-available {
+  text-overflow: ellipsis;
+  width: 300px;
+  padding: 2px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .overflow-ellipsis {
   text-overflow: ellipsis;
   width: 300px;
@@ -450,6 +463,8 @@ align-self: center;
 .card-profile  {
   border: 1.5px solid #2B395E;
   width: 490px;
+  background-color: #F7EEE9;
+  border-radius: 0px 10px 10px 0px;
   
   margin-bottom: 20px;
   /* padding-right: 20px; */

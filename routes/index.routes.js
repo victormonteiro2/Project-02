@@ -26,7 +26,8 @@ router.get('/available', (req, res, next) => {
 router.get('/search', (req, res, next) => {
   books.search(req.query.search, (error, result) => {
     if (!error) {
-      res.render('library', { result });
+      const resultSize = result.length
+      res.render('library', { result, resultSize });
     } else {
       console.log(error);
     }

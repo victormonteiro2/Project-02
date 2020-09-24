@@ -278,7 +278,7 @@ padding: 5px 8px 5px 8px;
   padding-left: 10px
 }
 .div-signup {
-height: 91vh;
+height: 84vh;
 }
 
 .img-form-signup {
@@ -319,7 +319,7 @@ align-self: center;
 
 
 .div-signin {
-  height: 91vh;
+  height: 84vh;
   }
   
   .img-form-signin {
@@ -358,6 +358,17 @@ align-self: center;
 
 /* style library.hbs */
 
+/* .library-mother-div {
+  height: 100%;
+  background-color: #F29A8F;
+} */
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+  width: 300px;
+  padding: 2px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .form-library {
   padding-top: 50px;
   height: 5vh;
@@ -366,6 +377,7 @@ align-self: center;
   width: 150px;
   align-self: center;
   padding-bottom: 10px;
+  padding-top: 30px;
 }
 
 .card-library  {
@@ -420,9 +432,11 @@ align-self: center;
   width: 100vw;
 } 
 
-/* .div-cards-library {
-  height: 400px;
-} */
+ .div-cards-library {
+  height: 450px;
+  background-color: #F7EEE9;
+  margin-bottom: 25px;
+} 
 
 /* style avaiable/userProfile.hbs */
 .card-profile-imgs {

@@ -149,15 +149,22 @@ footer {
 }
 
 footer div {
-  height: 70px;
+  /* height: 70px; */
 }
-footer div img {
+.logo-ironhack{
+  width: 60px;
+  /* height: 60px; */
+}
+
+.email-icon {
+  justify-self: end;
+  padding-top: 10px;
   width: 30px;
 }
 
 .a-footer{
+  padding-top: 14px;
   color: white;
-  padding-top: 4px;
   padding-left: 15px;
 }
 /* profile.hbs style */
@@ -259,7 +266,14 @@ padding: 5px 8px 5px 8px;
   color: #3C4DED;
 }
 
-.sign-h1 {
+.sign-in-h1 {
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px
+}
+
+.sign-up-h1 {
+  text-align: center;
   padding-right: 10px;
   padding-left: 10px
 }
@@ -454,6 +468,18 @@ font-weight: 300;
   color: #2B395E;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.div-avaible h2 {
+  color: #2B395E;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.div-forms-avaibles button {
+  margin-left: 25px;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=style.css.map */
 

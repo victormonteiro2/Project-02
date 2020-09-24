@@ -1,13 +1,21 @@
-<h2>Edit User details</h2>
+<div class="div-mother-edit-user d-flex align-content-center flex-column flex-wrap">
+
+<h2>Edite suas informações:</h2>
 
 {{#with response}}
 <form action="/edit-user" method="POST">
 
+<<<<<<< HEAD
+    <label for="name">Nome:
+    <input placeholder="Digite aqui seu novo nome!" type="text" name="name" value="{{name}}">
+=======
     <label for="name">Name:
     <input type="text" name="username" value="{{username}}">
+>>>>>>> master
     </label>
 
-    <button type="submit">Save</button>
+    <button class="btn-edit-user" type="submit">Salvar</button>
 </form>
 
 {{/with}}
+</div>

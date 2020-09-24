@@ -2,14 +2,15 @@
 
 <div class="div-profile container-fluid">
         <div class=" div-profile-row row">
-            <div class="d-flex flex-column align-content-center justify-content-center flex-wrap div-profile-left col">
+            <div class=" aaa d-flex flex-column align-content-center  flex-wrap div-profile-left col">
+               
                <section class=" align-self-center rounded-photo-frame">
 
                    <img class="profile-photo" src="images/pexels-adrienne-andersen-2552127.jpg" alt="">
                 </section>
                
                 <section class="name-section-profile">
-                    <h4>{{userInSession.username}}</h4>
+                    <h4 class="h4-username">{{userInSession.username}}</h4>
                 </section>
                 <section class=" section-score-btn align-self-center ">
                     <p class="p-score">Sua pontuação:  pontos</p>
@@ -25,7 +26,7 @@
                    
                 </section>
                 <span ><hr class="profile-hr"></span>
-                <form action="/edit-user" method="GET">
+                <form class="edit-profile-btn-form" action="/edit-user" method="GET">
                 <button type="submit" class="btn-edit-profile">Editar perfil</button>
                 </form>
             </div>

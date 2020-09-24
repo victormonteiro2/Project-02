@@ -14,7 +14,8 @@ const bookSchema = new Schema(
     id: String,
     thumbnail: String,
     offering: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-    wishlist: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+    wishlist: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    available: [{ type: Schema.Types.ObjectId, ref: 'User' }]
   },
   {
     timestamps: true

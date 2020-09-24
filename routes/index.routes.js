@@ -23,42 +23,39 @@ router.get('/available', (req, res, next) => {
     });
 });
 
-// router.post('/available', (req, res, next) => {
-//   db.collection.insert();
-// });
-
 router.get('/search', (req, res, next) => {
   books.search(req.query.search, (error, result) => {
     if (!error) {
       res.render('library', { result });
-      // console.log(result[0]);
     } else {
       console.log(error);
     }
   });
-  //   console.log(req.query.search);
 });
 
 router.post('/add-book/:id', (req, res, next) => {
-  // console.log('TESTE', req.session);
-  books.lookup(req.params.id, (err, result) => {
-    if (!err) {
-      BookModel.create({
-        title: result.title,
-        subtitle: result.subtitle,
-        authors: result.authors,
-        description: result.description,
-        categories: result.categories,
-        id: result.id,
-        thumbnail: result.thumbnail,
-        offering: req.session.currentUser._id
-      })
-        .then((response) => res.redirect('/available'))
-        .catch((error) => console.log(error));
-    } else {
-      console.log(err);
-    }
-  });
+  if (!req.session.currentUser) {
+    res.redirect('/login');
+  } else {
+    books.lookup(req.params.id, (err, result) => {
+      if (!err) {
+        BookModel.create({
+          title: result.title,
+          subtitle: result.subtitle,
+          authors: result.authors,
+          description: result.description,
+          categories: result.categories,
+          id: result.id,
+          thumbnail: result.thumbnail,
+          offering: req.session.currentUser._id
+        })
+          .then((response) => res.redirect('/available'))
+          .catch((error) => console.log(error));
+      } else {
+        console.log(err);
+      }
+    });
+  }
 });
 
 router.get('/remove-book', (req, res, next) => {

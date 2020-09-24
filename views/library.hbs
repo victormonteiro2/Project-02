@@ -5,15 +5,18 @@
 
   <h2>Busque livros aqui!</h2>
 </div> --}}
+<div class="library-mother-div">
+
 <div class="form-library d-flex justify-content-center align-content-center">
 <form class="form-search-library" action="/search" method="GET">
-  <input placeholder="Busque livros aqui!" type="text" name="search"> <button type="submit"> enviar</button>
+  <input placeholder="Busque livros aqui!" type="text" name="search"> 
+  <button id="btn-library" onclick="esconder" type="submit"> enviar</button>
 </form>
 </div>
             
 <div class="div-library container-fluid">
   <div class="row d-flex justify-content-center ">
-
+    <img width="800px" id="book-illustration-library" src="images/3630156.jpg" alt="">
   <div class="d-flex flex-wrap col-10">
 {{#each result}}
 <div class=" col-4">
@@ -22,7 +25,7 @@
     <img class="library-imgs card-img-top" src="{{thumbnail}}" alt="Book image">
     <p><span class="bold">Title:</span> {{title}}</p>
     <p><span class="bold">Authors:</span> {{authors}}</p>
-    <p><span class="bold">Description:</span> {{description}}</p>
+    <p class="overflow-ellipsis"><span class=" bold">Description:</span> {{description}}</p>
      <form action="/add-book/{{id}}" method="POST">
      <button type="submit">Add</button>
      </form>   
@@ -35,4 +38,20 @@
   </div>
 
 
- 
+ <footer id="footer-contato" class="d-flex justify-content-between">
+    
+  <div class="d-flex  align-content-center flex-wrap">
+    <img class="logo-ironhack" src="/images/ironhack-logo.png" alt="">
+    <div>
+
+    <a href="">cridado por: Victor e Pedro Taveres</a>
+    </div>
+    <div>
+
+    <img class="  email-icon" src="images/email-icon.png" alt="">
+    <a class="a-footer">saq@livrese.com</a>
+    </div>
+    
+  </div>
+</footer>
+</div>

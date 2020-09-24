@@ -1,0 +1,13 @@
+<h2>Edit User details</h2>
+
+{{#with response}}
+<form action="/edit-user" method="POST">
+
+    <label for="name">Name:
+    <input type="text" name="name" value="{{name}}">
+    </label>
+
+    <button type="submit">Save</button>
+</form>
+
+{{/with}}

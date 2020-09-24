@@ -1,6 +1,6 @@
 // routes/auth.routers.js
 
-const { Router } = require('express');
+const { Router, query } = require('express');
 const router = new Router();
 const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
@@ -137,12 +137,36 @@ router.get('/userProfile', (req, res) => {
   }
 });
 
+// GET route do delete user
+
 router.get('/delete-user', (req, res, next) => {
   console.log(req.session.currentUser._id);
   User.findByIdAndRemove(req.session.currentUser._id)
     .then((response) => {
       console.log(`${response} deleted.`);
       res.redirect('/');
+    })
+    .catch((error) => console.log(error));
+});
+
+//GET edit user details
+
+router.get('/edit-user', (req, res, next) => {
+  User.findById(req.session.currentUser._id)
+    .then((response) => {
+      res.render('../views/users/edit-user.hbs', { response });
+    })
+    .catch((error) => console.log(error));
+});
+
+//POST route to edit user details
+
+router.post('/edit-user', (req, res, next) => {
+  User.collection
+    .updateOne(req.session.currentUser.username)
+    .then((response) => {
+      console.log('${response} modified.');
+      res.redirect('/user-profile');
     })
     .catch((error) => console.log(error));
 });

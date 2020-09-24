@@ -8,18 +8,18 @@
     <a class="nav-link active" href="/">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Como funciona</a>
+    <a class="nav-link" href="#como-funciona">Como funciona</a>
   </li>
    <li class="nav-item">
     <a class="nav-link" href="/library">library</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" href="#">Contato</a>
+    <a class="nav-link" href="#footer-contato">Contato</a>
   </li>
-  {{#if userInSession}}
     <li class="nav-item">
       <a class="nav-link" href="/userProfile">Perfil</a>
     </li>
+  {{#if userInSession}}
     <form class="nav-item form-inline" id="logout-form" action="/logout" method="POST">
     <button class="nav-btn btn-style">Logout</button>
   </form>

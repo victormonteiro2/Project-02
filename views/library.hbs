@@ -17,7 +17,7 @@
   <div class="d-flex flex-wrap col-10">
 {{#each result}}
 <div class=" col-4">
-  <div class="card card-library" ;>
+  <div class="div-cards-library card card-library" ;>
 
     <img class="library-imgs card-img-top" src="{{thumbnail}}" alt="Book image">
     <p><span class="bold">Title:</span> {{title}}</p>
@@ -26,7 +26,7 @@
      <form action="/add-book/{{id}}" method="POST">
      <button type="submit">Add</button>
      </form>   
-        <hr>
+        
   </div>
 </div>
 {{/each}}

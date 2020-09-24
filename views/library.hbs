@@ -16,7 +16,9 @@
             
 <div class="div-library container-fluid">
   <div class="row d-flex justify-content-center ">
+  {{#unless resultSize}}
     <img width="800px" id="book-illustration-library" src="images/3630156.jpg" alt="">
+    {{/unless}}
   <div class="d-flex flex-wrap col-10">
 {{#each result}}
 <div class=" col-4">

@@ -7,11 +7,11 @@
       <div class="d-flex justify-content-center  flex-wrap col-12">
 {{#each book}}
 <div class=" col-4">
-  <div class="card card-library" ;>
+  <div class="card div-cards-library card-library" ;>
     <img class="library-imgs card-img-top" src="{{thumbnail}}" alt="Book image">
     <p><span class="bold">Title:</span> {{title}}</p>
     <p><span class="bold">Authors:</span> {{authors}}</p>
-    <p><span class="bold">Description:</span> {{description}}</p>
+    <p id="overflow-ellipsis-available"><span class="bold">Description:</span> {{description}}</p>
      <form action="/add-book/{{id}}" method="POST">
      
      <div class="div-forms-avaibles d-flex justify-content-center flex-row">
@@ -28,4 +28,20 @@
 </div>
 {{/each}}
   </div>
+   <footer id="footer-contato" class="d-flex justify-content-between">
+    
+  <div class="d-flex  align-content-center flex-wrap">
+    <img class="logo-ironhack" src="/images/ironhack-logo.png" alt="">
+    <div>
+
+    <a href="">cridado por: Victor e Pedro Taveres</a>
+    </div>
+    <div>
+
+    <img class="  email-icon" src="images/email-icon.png" alt="">
+    <a class="a-footer">saq@livrese.com</a>
+    </div>
+    
+  </div>
+</footer>
 </div>

@@ -4,10 +4,10 @@ const { Router } = require('express');
 const router = new Router();
 const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
-const User = require('../models/User.model.js');
 const { Mongoose } = require('mongoose');
 const express = require('express');
 const app = express();
+const User = require('../models/User.model');
 const BookModel = require('../models/Book.model');
 
 require('../configs/session.config')(app);
@@ -135,6 +135,16 @@ router.get('/userProfile', (req, res) => {
   } else {
     return res.redirect('/login');
   }
+});
+
+router.get('/delete-user', (req, res, next) => {
+  console.log(req.session.currentUser._id);
+  User.findByIdAndRemove(req.session.currentUser._id)
+    .then((response) => {
+      console.log(`${response} deleted.`);
+      res.redirect('/');
+    })
+    .catch((error) => console.log(error));
 });
 
 module.exports = router;

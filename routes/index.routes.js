@@ -16,12 +16,11 @@ router.get('/available', (req, res, next) => {
   BookModel.find()
     .then((response) => {
       console.log(response);
-      res.render('users/available', {book: response});
+      res.render('users/available', { book: response });
     })
     .catch((error) => {
       console.log(error);
     });
-
 });
 
 // router.post('/available', (req, res, next) => {
@@ -41,7 +40,7 @@ router.get('/search', (req, res, next) => {
 });
 
 router.post('/add-book/:id', (req, res, next) => {
-  console.log('TESTE', req.session);
+  // console.log('TESTE', req.session);
   books.lookup(req.params.id, (err, result) => {
     if (!err) {
       BookModel.create({
@@ -60,6 +59,16 @@ router.post('/add-book/:id', (req, res, next) => {
       console.log(err);
     }
   });
+});
+
+router.get('/remove-book/:id', (req, res, next) => {
+  console.log('teste', req.session.currentUser.id);
+  BookModel.findByIdAndRemove(req.session.currentUser.id)
+    .then((response) => {
+      console.log(`${response} deleted.`);
+      res.redirect('/userProfile');
+    })
+    .catch((error) => console.log(error));
 });
 
 module.exports = router;

@@ -72,8 +72,13 @@ router.post('/signup', (req, res, next) => {
 // LOGIN
 
 // route to display the login form to users
-router.get('/login', (req, res) => res.render('auth/login'));
-
+router.get('/login', (req, res) => {
+  if (req.session.currentUser) {
+    res.redirect('/userProfile');
+  } else {
+    res.render('auth/login');
+  }
+});
 //login route to process form data
 router.post('/login', (req, res, next) => {
   const { email, password } = req.body;

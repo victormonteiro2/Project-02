@@ -28,8 +28,11 @@
     <p><span class="bold">Authors:</span> {{authors}}</p>
     <p class="overflow-ellipsis"><span class=" bold">Description:</span> {{description}}</p>
      <form action="/add-book/{{id}}" method="POST">
-     <button type="submit">Add</button>
+     <button type="submit">Tenho para troca</button>
      </form>   
+     <form action="/add-wishlist/{{id}}" method="POST">
+     <button type="submit">Procuro</button>
+     </form> 
         
   </div>
 </div>

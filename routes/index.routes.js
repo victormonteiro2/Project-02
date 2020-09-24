@@ -12,6 +12,8 @@ router.get('/', (req, res, next) => res.render('index'));
 
 router.get('/library', (req, res) => res.render('library'));
 
+router.get('/tradable', (req, res) => res.render('tradable'));
+
 router.get('/offering', (req, res, next) => {
   BookModel.find({ offering: { $in: req.session.currentUser._id } })
     .then((response) => {
@@ -37,7 +39,7 @@ router.get('/wishlist', (req, res, next) => {
 router.get('/search', (req, res, next) => {
   books.search(req.query.search, (error, result) => {
     if (!error) {
-      const resultSize = result.length
+      const resultSize = result.length;
       res.render('library', { result, resultSize });
     } else {
       console.log(error);
@@ -119,4 +121,10 @@ router.get('/remove-wishlist', (req, res, next) => {
     .catch((error) => console.log(error));
 });
 
+router.get('/trade-book/:id', (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/login');
+  } else {
+  }
+});
 module.exports = router;

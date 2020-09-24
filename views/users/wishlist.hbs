@@ -1,0 +1,30 @@
+{{>navbar}}
+<div class="div-avaible">
+  
+
+    <h2>Wishlist:</h2>
+  
+      <div class="d-flex justify-content-center  flex-wrap col-12">
+{{#each book}}
+<div class=" col-4">
+  <div class="card card-library" ;>
+    <img class="library-imgs card-img-top" src="{{thumbnail}}" alt="Book image">
+    <p><span class="bold">Title:</span> {{title}}</p>
+    <p><span class="bold">Authors:</span> {{authors}}</p>
+    <p><span class="bold">Description:</span> {{description}}</p>
+     <form action="/add-wishlist/{{id}}" method="POST">
+     
+     <div class="div-forms-avaibles d-flex justify-content-center flex-row">
+
+     <button type="submit">Add to wishlist</button>
+     </form>   
+      
+      <form action="/remove-wishlist" method="GET">
+     <button type="submit">Remove from wishlist</button>
+     </form> 
+     </div>
+  </div>
+</div>
+{{/each}}
+  </div>
+</div>

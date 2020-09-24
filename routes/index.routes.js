@@ -31,7 +31,7 @@ router.get('/search', (req, res, next) => {
   books.search(req.query.search, (error, result) => {
     if (!error) {
       res.render('library', { result });
-      console.log(result[0]);
+      // console.log(result[0]);
     } else {
       console.log(error);
     }
@@ -61,12 +61,12 @@ router.post('/add-book/:id', (req, res, next) => {
   });
 });
 
-router.get('/remove-book/:id', (req, res, next) => {
-  console.log('teste', req.session.currentUser.id);
-  BookModel.findByIdAndRemove(req.session.currentUser.id)
+router.get('/remove-book', (req, res, next) => {
+  BookModel.collection
+    .deleteOne(req._id)
     .then((response) => {
       console.log(`${response} deleted.`);
-      res.redirect('/userProfile');
+      res.redirect('/available');
     })
     .catch((error) => console.log(error));
 });

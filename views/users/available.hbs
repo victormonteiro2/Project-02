@@ -1,7 +1,10 @@
 {{>navbar}}
-<div>
+<div class="div-avaible">
+  
+
     <h2>Livros Disponibilizados:</h2>
-      <div class="d-flex flex-wrap col-10">
+  
+      <div class="d-flex justify-content-center  flex-wrap col-12">
 {{#each book}}
 <div class=" col-4">
   <div class="card card-library" ;>
@@ -10,12 +13,16 @@
     <p><span class="bold">Authors:</span> {{authors}}</p>
     <p><span class="bold">Description:</span> {{description}}</p>
      <form action="/add-book/{{id}}" method="POST">
+     
+     <div class="div-forms-avaibles d-flex justify-content-center flex-row">
+
      <button type="submit">Add</button>
      </form>   
-        <hr>
+      
       <form action="/remove-book" method="GET">
      <button type="submit">Remove</button>
      </form> 
+     </div>
   </div>
 </div>
 {{/each}}

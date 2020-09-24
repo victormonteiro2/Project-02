@@ -33,6 +33,8 @@ router.get('/search', (req, res, next) => {
   });
 });
 
+//ROUTE TO ADD IN OFFERING BOOKS
+
 router.post('/add-book/:id', (req, res, next) => {
   if (!req.session.currentUser) {
     res.redirect('/login');
@@ -64,6 +66,43 @@ router.get('/remove-book', (req, res, next) => {
     .then((response) => {
       console.log(`${response} deleted.`);
       res.redirect('/available');
+    })
+    .catch((error) => console.log(error));
+});
+
+//ROUTE TO WISHLIST
+
+router.post('/add-wishlist/:id', (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/login');
+  } else {
+    books.lookup(req.params.id, (err, result) => {
+      if (!err) {
+        BookModel.create({
+          title: result.title,
+          subtitle: result.subtitle,
+          authors: result.authors,
+          description: result.description,
+          categories: result.categories,
+          id: result.id,
+          thumbnail: result.thumbnail,
+          wishlist: req.session.currentUser._id
+        })
+          .then((response) => res.redirect('/wishlist'))
+          .catch((error) => console.log(error));
+      } else {
+        console.log(err);
+      }
+    });
+  }
+});
+
+router.get('/remove-wishlist', (req, res, next) => {
+  BookModel.collection
+    .deleteOne(req._id)
+    .then((response) => {
+      console.log(`${response} deleted.`);
+      res.redirect('/wishlist');
     })
     .catch((error) => console.log(error));
 });

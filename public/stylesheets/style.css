@@ -95,6 +95,10 @@ margin-top: 50px;
   height: 100vh;
 }
 
+.aaa {
+  position: relative;
+}
+
 .div-left h1 {
   
   font-size: 50px;
@@ -105,7 +109,7 @@ margin-top: 50px;
 }
 
 fieldset {
-  margin-top: 200px;
+  /* margin-top: 200px; */
   border-bottom: 25px solid #3C4DED;
   border-left: 2px solid #3C4DED
 }

@@ -2,7 +2,7 @@
 <div class="div-avaible">
   
 
-    <h2>Wishlist:</h2>
+    <h2>Livros Disponibilizados:</h2>
   
       <div class="d-flex justify-content-center  flex-wrap col-12">
 {{#each book}}
@@ -12,15 +12,15 @@
     <p><span class="bold">Title:</span> {{title}}</p>
     <p><span class="bold">Authors:</span> {{authors}}</p>
     <p><span class="bold">Description:</span> {{description}}</p>
-     <form action="/add-wishlist/{{id}}" method="POST">
+     {{!-- <form action="/add-book/{{id}}" method="POST"> --}}
      
-     <div class="div-forms-avaibles d-flex justify-content-center flex-row">
+     {{!-- <div class="div-forms-avaibles d-flex justify-content-center flex-row"> --}}
 
-     <button type="submit">Add to wishlist</button>
-     </form>   
+     {{!-- <button type="submit">Add</button>
+     </form>    --}}
       
       <form action="/remove-wishlist" method="GET">
-     <button type="submit">Remove from wishlist</button>
+     <button type="submit">Remove WL</button>
      </form> 
      </div>
   </div>

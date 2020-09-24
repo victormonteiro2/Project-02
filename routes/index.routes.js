@@ -12,11 +12,22 @@ router.get('/', (req, res, next) => res.render('index'));
 
 router.get('/library', (req, res) => res.render('library'));
 
-router.get('/available', (req, res, next) => {
-  BookModel.find()
+router.get('/offering', (req, res, next) => {
+  BookModel.find({ offering: { $in: req.session.currentUser._id } })
     .then((response) => {
       console.log(response);
-      res.render('users/available', { book: response });
+      res.render('users/offering', { book: response });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+router.get('/wishlist', (req, res, next) => {
+  BookModel.find({ wishlist: { $in: req.session.currentUser._id } })
+    .then((response) => {
+      console.log(response);
+      res.render('users/wishlist', { book: response });
     })
     .catch((error) => {
       console.log(error);
@@ -51,7 +62,7 @@ router.post('/add-book/:id', (req, res, next) => {
           thumbnail: result.thumbnail,
           offering: req.session.currentUser._id
         })
-          .then((response) => res.redirect('/available'))
+          .then((response) => res.redirect('/offering'))
           .catch((error) => console.log(error));
       } else {
         console.log(err);
@@ -65,7 +76,7 @@ router.get('/remove-book', (req, res, next) => {
     .deleteOne(req._id)
     .then((response) => {
       console.log(`${response} deleted.`);
-      res.redirect('/available');
+      res.redirect('/offering');
     })
     .catch((error) => console.log(error));
 });
@@ -102,7 +113,7 @@ router.get('/remove-wishlist', (req, res, next) => {
     .deleteOne(req._id)
     .then((response) => {
       console.log(`${response} deleted.`);
-      res.redirect('/wishlist');
+      res.redirect('./wishlist');
     })
     .catch((error) => console.log(error));
 });

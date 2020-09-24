@@ -9,6 +9,7 @@ const express = require('express');
 const app = express();
 const User = require('../models/User.model');
 const BookModel = require('../models/Book.model');
+const { find } = require('../models/Book.model');
 
 require('../configs/session.config')(app);
 
@@ -162,11 +163,20 @@ router.get('/edit-user', (req, res, next) => {
 //POST route to edit user details
 
 router.post('/edit-user', (req, res, next) => {
-  User.collection
-    .updateOne(req.session.currentUser.username)
+  User.updateOne(
+    { username: req.session.currentUser.username },
+    { $set: req.body }
+  )
     .then((response) => {
-      console.log('${response} modified.');
-      res.redirect('/user-profile');
+      console.log(req.session.currentUser);
+      console.log(response);
+      User.findById(req.session.currentUser._id)
+        .then((findResponse) => {
+          req.session.currentUser = findResponse;
+          console.log(req.session.currentUser);
+          res.redirect('/userProfile');
+        })
+        .catch((error) => console.log(error));
     })
     .catch((error) => console.log(error));
 });

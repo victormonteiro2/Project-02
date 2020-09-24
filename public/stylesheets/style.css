@@ -144,10 +144,22 @@ legend{
 
 /* index.hbs footer style */
 footer {
-  height: 300px;
+  height: 70px;
   background-color: #2B395E;
 }
 
+footer div {
+  height: 70px;
+}
+footer div img {
+  width: 30px;
+}
+
+.a-footer{
+  color: white;
+  padding-top: 4px;
+  padding-left: 15px;
+}
 /* profile.hbs style */
 .profile-rectangle{
   height: 90vh;
@@ -232,6 +244,16 @@ padding: 5px 8px 5px 8px;
 
 
 /* style signup.hbs */
+
+.btn-sign-in-out {
+  color:white;
+  background-color: #F15228;
+  border-radius: 50px;
+  border-color: #F15228;
+
+
+
+}
 
 .span-azul {
   color: #3C4DED;

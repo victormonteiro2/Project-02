@@ -1,7 +1,7 @@
 {{!-- {{#unless index}} --}}
 
 <nav class="navbar navbar-light" style="background-color: #F7EEE9;">
-  <a class="navbar-brand logo" href="#">Book<span class="span-logo">_</span>Share</a>
+  <a class="navbar-brand logo" href="#">Livre<span class="span-logo">_</span>se</a>
     
     <ul class="nav justify-content-end">
   <li class="nav-item">
@@ -11,14 +11,18 @@
     <a class="nav-link" href="#como-funciona">Como funciona</a>
   </li>
    <li class="nav-item">
-    <a class="nav-link" href="/library">library</a>
+    <a class="nav-link" href="/library">Pesquise Livros</a>
   </li>
-    <li class="nav-item">
-    <a class="nav-link" href="#footer-contato">Contato</a>
+     <li class="nav-item">
+    <a class="nav-link" href="/available">Livros disponíveis</a>
   </li>
     <li class="nav-item">
       <a class="nav-link" href="/userProfile">Perfil</a>
     </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#footer-contato">Contato</a>
+  </li>
+ 
   {{#if userInSession}}
     <form class="nav-item form-inline" id="logout-form" action="/logout" method="POST">
     <button class="nav-btn btn-style">Logout</button>

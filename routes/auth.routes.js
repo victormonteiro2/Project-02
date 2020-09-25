@@ -10,6 +10,8 @@ const app = express();
 const User = require('../models/User.model');
 const BookModel = require('../models/Book.model');
 const { find } = require('../models/Book.model');
+//CONFIG CLAUDINARY
+const fileUploader = require('../configs/cloudinary.config');
 
 require('../configs/session.config')(app);
 
@@ -72,8 +74,13 @@ router.post('/signup', (req, res, next) => {
 // LOGIN
 
 // route to display the login form to users
-router.get('/login', (req, res) => res.render('auth/login'));
-
+router.get('/login', (req, res) => {
+  if (req.session.currentUser) {
+    res.redirect('/userProfile');
+  } else {
+    res.render('auth/login');
+  }
+});
 //login route to process form data
 router.post('/login', (req, res, next) => {
   const { email, password } = req.body;
@@ -142,7 +149,7 @@ router.get('/userProfile', (req, res) => {
 
 router.get('/delete-user', (req, res, next) => {
   console.log(req.session.currentUser._id);
-  User.findByIdAndRemove(req.session.currentUser._id)
+  User.findByIdAndRemove(req.session.currentUser._id, req.session.currentUser)
     .then((response) => {
       console.log(`${response} deleted.`);
       res.redirect('/');
@@ -155,21 +162,50 @@ router.get('/delete-user', (req, res, next) => {
 router.get('/edit-user', (req, res, next) => {
   User.findById(req.session.currentUser._id)
     .then((response) => {
-      res.render('../views/users/edit-user.hbs', { response });
+      res.render('../views/users/edit-user.hbs', {
+        response,
+        userInSession: req.session.currentUser
+      });
     })
     .catch((error) => console.log(error));
 });
 
 //POST route to edit user details
 
-router.post('/edit-user', (req, res, next) => {
+// router.post('/edit-user', (req, res, next) => {
+//   User.updateOne(
+//     { username: req.session.currentUser.username },
+//     { $set: req.body }
+//   )
+//     .then((response) => {
+//       console.log(req.session.currentUser);
+//       console.log(response);
+//       User.findById(req.session.currentUser._id)
+//         .then((findResponse) => {
+//           req.session.currentUser = findResponse;
+//           console.log(req.session.currentUser);
+//           res.redirect('/userProfile');
+//         })
+//         .catch((error) => console.log(error));
+//     })
+//     .catch((error) => console.log(error));
+// });
+
+router.post('/edit-user', fileUploader.single('image'), (req, res) => {
+  console.log('teste3', req.file);
+  const { name } = req.body;
   User.updateOne(
     { username: req.session.currentUser.username },
-    { $set: req.body }
+    {
+      $set: {
+        ...req.body,
+        profileImage: req.file
+          ? req.file.url
+          : req.session.currentUser.profileImage
+      }
+    }
   )
     .then((response) => {
-      console.log(req.session.currentUser);
-      console.log(response);
       User.findById(req.session.currentUser._id)
         .then((findResponse) => {
           req.session.currentUser = findResponse;

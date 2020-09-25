@@ -6,20 +6,19 @@
                
                <section class=" align-self-center rounded-photo-frame">
 
-                   <img class="profile-photo" src="images/pexels-adrienne-andersen-2552127.jpg" alt="">
+                   <img class="profile-photo" src="{{userInSession.profileImage}}" alt="">
                 </section>
                
                 <section class="name-section-profile">
                     <h4 class="h4-username">{{userInSession.username}}</h4>
                 </section>
                 <section class=" section-score-btn align-self-center ">
-                    <p class="p-score">Sua pontuação:  pontos</p>
+                    <p class="p-score">Sua pontuação: {{userInSession.score}}</p>
                 </section>
                 <span ><hr class="profile-hr"></span>
                 <section class="section-seus-livros align-self-center text-center">
                     <h4>Seus livros:</h4>
                  
-                        <p ><a  href="">Livros solicitados</a></p>
                         <p> <a href="/wishlist">Livros procurados</a></p>
                         <p> <a href="/offering">Livros disponibilizados</a> </p>
 

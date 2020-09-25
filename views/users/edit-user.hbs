@@ -3,29 +3,13 @@
 
 <h2>Edite suas informações:</h2>
 
-{{!-- {{#with response}}
-<form action="/edit-user" method="POST">
-
-    <label for="name">Name:
-    <input type="text" name="username" value="{{username}}">
-    </label>
-    <label for="Profile photo">Profile Photo:
-    <input type="file" name="image" id="" />
-    </label>
-    <button class="btn-edit-user" type="submit">Salvar</button>
-</form>
-
-{{/with}} --}}
-</div>
-
-{{!-- TESTE --}}
-
-
-
-
+<br>
+<br>
+<br>
+<br>
 <div class="row">
 
-  <div class="col-md-6">
+  <div class="col-md-12">
     {{#with response}}
     <form action="/edit-user" method="POST" enctype="multipart/form-data">
       <div class="form-group">
@@ -36,13 +20,23 @@
         <label for="image-input">Foto:</label>
         <input type="file" name="image" id="image-input" class="form-control-file" />
       </div>
-      <button type="submit" class="btn btn-primary">Alterar</button>
+      <button class="btn-edit-user-2" type="submit" class="btn btn-primary">Alterar</button>
        </form>
 {{/with}}
-  </div>
-   <form action="/delete-user" method="GET">
-     <button type="submit">Deletar Perfil</button>
+   <form class="" action="/delete-user" method="GET">
+     <button class="btn-delete-profile" type="submit">Deletar Perfil</button>
+
      </form>
+  </div>
+
 
 </div>
+</div>
+
+
+
+
+
+
+
 {{>footer}}

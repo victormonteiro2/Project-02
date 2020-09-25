@@ -4,27 +4,25 @@
 
     <h2>Livros Procurados:</h2>
   
-      <div class="d-flex justify-content-center  flex-wrap col-12">
 {{#each book}}
+      <div class=" d-flex flex-row justify-content-center flex-wrap col-12">
+
 <div class=" col-4">
-  <div class="card card-library" ;>
+  <div class="card div-cards-library card-library">
     <img class="library-imgs card-img-top" src="{{thumbnail}}" alt="Book image">
     <p><span class="bold">Title:</span> {{title}}</p>
     <p><span class="bold">Authors:</span> {{authors}}</p>
-    <p><span class="bold">Description:</span> {{description}}</p>
-     {{!-- <form action="/add-book/{{id}}" method="POST"> --}}
-     
-     {{!-- <div class="div-forms-avaibles d-flex justify-content-center flex-row"> --}}
+    <p class="overflow-ellipsis"><span class="bold">Description:</span> {{description}}</p>
+      <div class="d-flex flex-row justify-content-center">
 
-     {{!-- <button type="submit">Add</button>
-     </form>    --}}
-      
       <form action="/remove-wishlist" method="GET">
      <button type="submit">Remover</button>
      </form> 
+      </div>
      </div>
   </div>
 </div>
 {{/each}}
   </div>
+  {{>footer}}
 </div>

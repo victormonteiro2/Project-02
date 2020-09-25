@@ -1,21 +1,48 @@
+{{>navbar}}
 <div class="div-mother-edit-user d-flex align-content-center flex-column flex-wrap">
 
 <h2>Edite suas informações:</h2>
 
-{{#with response}}
+{{!-- {{#with response}}
 <form action="/edit-user" method="POST">
 
-<<<<<<< HEAD
-    <label for="name">Nome:
-    <input placeholder="Digite aqui seu novo nome!" type="text" name="name" value="{{name}}">
-=======
     <label for="name">Name:
     <input type="text" name="username" value="{{username}}">
->>>>>>> master
     </label>
-
+    <label for="Profile photo">Profile Photo:
+    <input type="file" name="image" id="" />
+    </label>
     <button class="btn-edit-user" type="submit">Salvar</button>
 </form>
 
-{{/with}}
+{{/with}} --}}
 </div>
+
+{{!-- TESTE --}}
+
+
+
+
+<div class="row">
+
+  <div class="col-md-6">
+    {{#with response}}
+    <form action="/edit-user" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="username" value="{{username}}">
+      </div>
+      <div class="form-group">
+        <label for="image-input">Foto:</label>
+        <input type="file" name="image" id="image-input" class="form-control-file" />
+      </div>
+      <button type="submit" class="btn btn-primary">Alterar</button>
+       </form>
+{{/with}}
+  </div>
+   <form action="/delete-user" method="GET">
+     <button type="submit">Deletar Perfil</button>
+     </form>
+
+</div>
+{{>footer}}

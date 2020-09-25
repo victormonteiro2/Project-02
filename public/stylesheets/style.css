@@ -149,8 +149,14 @@ legend{
 
 /* index.hbs footer style */
 footer {
+  bottom:0;
+  position: relative;
+ 
   height: 70px;
+  
   background-color: #2B395E;
+}
+.footer-bottom {
 }
 
 .a-footer-email{

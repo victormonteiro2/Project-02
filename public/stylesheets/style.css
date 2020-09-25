@@ -147,10 +147,13 @@ legend{
 }
 
 
+
+
 /* index.hbs footer style */
 footer {
   bottom:0;
-  position: relative;
+  /* position: fixed !important; */
+  /* width: 100vw !important; */
  
   height: 70px;
   
@@ -397,6 +400,12 @@ align-self: center;
 
 /* style library.hbs */
 
+.btn-troca {
+  width: 150px !important;
+  margin-right: 20px;
+}
+
+
 /* .library-mother-div {
   height: 100%;
   background-color: #F29A8F;
@@ -555,9 +564,26 @@ font-weight: 300;
   padding-left: 10px;
 }
 
+.btn-edit-user-2{
+  background-color: #2B395E;
+  margin-bottom: 20px;
+}
+.btn-delete-profile {
+  background-color: #2B395E;
+}
+
 .div-mother-edit-user {
 color: #2B395E;
+height: 90vh;
+width: 100vw;
 }
+
+/* tradable */
+
+.btn-tradable {
+  width: 200px !important;
+}
+
 /*# sourceMappingURL=style.css.map */
 
 

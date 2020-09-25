@@ -27,12 +27,15 @@
     <p><span class="bold">Title:</span> {{title}}</p>
     <p><span class="bold">Authors:</span> {{authors}}</p>
     <p class="overflow-ellipsis"><span class=" bold">Description:</span> {{description}}</p>
+     <div class="d-flex flex-row justify-content-center">
+
      <form action="/add-book/{{id}}" method="POST">
-     <button type="submit">Tenho para troca</button>
+     <button class="btn-troca" type="submit">Tenho para troca</button>
      </form>   
      <form action="/add-wishlist/{{id}}" method="POST">
      <button type="submit">Procuro</button>
      </form> 
+     </div>
         
   </div>
 </div>

@@ -171,7 +171,7 @@ router.get('/trade-book/:id', (req, res, next) => {
         UserModel.updateOne({ _id: req.params.id }, { $inc: { score: 1 } })
           .then((scoreResponse) => {
             console.log('teste', scoreResponse);
-            res.redirect('/offering'),
+            res.redirect('/tradable'),
               { userInSession: req.session.currentUser };
           })
           .catch((error) => {

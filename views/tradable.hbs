@@ -20,7 +20,7 @@
      {{!-- </form>    --}}
       
       <form action="/trade-book/{{offering.[0]}}" method="GET">
-     <button type="submit">I want this book!</button>
+     <button class="btn-tradable" type="submit">Eu quero esse livro!</button>
      </form> 
 
      </div>
@@ -28,20 +28,7 @@
 </div>
 {{/each}}
   </div>
-   <footer id="footer-contato" class="d-flex justify-content-between">
-    
-  <div class="d-flex  align-content-center flex-wrap">
-    <img class="logo-ironhack" src="/images/ironhack-logo.png" alt="">
-    <div>
-
-    <a href="">cridado por: Victor e Pedro Taveres</a>
-    </div>
-    <div>
-
-    <img class="  email-icon" src="images/email-icon.png" alt="">
-    <a class="a-footer">saq@livrese.com</a>
-    </div>
-    
-  </div>
-</footer>
+  
+  
+  {{>footer}}
 </div>
